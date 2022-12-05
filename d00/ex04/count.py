@@ -2,6 +2,10 @@ import string
 import sys
 
 def text_analyzer(*args):
+    """
+    This function counts the number of upper characters, lower characters,
+    punctuation and spaces in a given text.
+    """
     if args is None or len(args) == 0:
         args = input("What is the text to analyze? ")
     else:
@@ -20,7 +24,7 @@ def text_analyzer(*args):
     print("- " + str(count_spaces) + " space(s)")
 
 if __name__ == '__main__':
-    if len(sys.argv) == 1:
-        print("Error: no argument provided!")
+    if len(sys.argv) != 2:
+        print("Error: invalid args count!")
         exit(1)
-    text_analyzer(' '.join(sys.argv[1:]))
+    text_analyzer(sys.argv[1])
